@@ -1,15 +1,17 @@
 <template>
   <div id="main">
     <div id="stream-section">
-      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name"></stream-template>
+      <!-- <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name"></stream-template> -->
     </div>
 
     <div id="chat-section">
       <ul id="chat-nav">
-        <li v-for="name in streamerNames" :key="name">{{name}}</li>
+        <li v-for="name in streamerNames" :key="name" @click.prevent="chatSelected(name)">
+          <a href="">{{name}}</a>
+        </li>
       </ul>
-
-      <iframe scrolling="no" id="chat" src="http://www.twitch.tv/hebo/chat"></iframe>
+      <!-- <iframe scrolling="yes" class="chat" src="http://www.twitch.tv/hebo/chat"></iframe> -->
+      <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
 
       <ul id="options-nav">
         <li>Add Stream</li>
@@ -31,6 +33,11 @@ export default {
         "nairomk",
         "zero",
       ]
+    }
+  },
+  methods: {
+    chatSelected(name) {
+      console.log(name);
     }
   }
 }
@@ -81,7 +88,7 @@ export default {
   padding: 0 5px;
 }
 
-#chat {
+.chat {
   align-self: stretch;
   width: 100%;
   min-width: 300px;
