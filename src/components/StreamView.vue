@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div id="stream-section" :style="flexStyle">
-      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="canGrow"></stream-template>
+      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="growStyle"></stream-template>
     </div>
 
     <div id="chat-section">
@@ -29,11 +29,13 @@ export default {
       streamerNames: [
         "gsmvoid",
         "captainsalt",
+        "captainsalt",
       ],
       streamCanGrow: false
     }
   },
   methods: {
+    //loops through chat elements and applies/removes the hidden class based on which button is pressed
     chatSelected(name) {
       var chats = document.getElementsByClassName("chat");
       for (let i = 0; i < chats.length; i++) {
@@ -47,17 +49,20 @@ export default {
     },
   },
   computed: {
+    //Changes the stream layout based on how many streams are being watched 
     flexStyle: function() {
       var style = {
         justifyContent: "center",
         display: "flex"
       }
 
+      //2 or less streams
       if (this.streamerNames.length <= 2) {
         style.flexFlow = "column";
         style.flexWrap = "none";
         this.streamCanGrow = true;
       }
+      //more than 2 streams
       else {
         style.flexFlow = "initial"
         style.flexWrap = "wrap"
@@ -66,7 +71,8 @@ export default {
 
       return style;
     },
-    canGrow: function() {
+    //allows the flexbox to grow so it fills up empty space when there's not may streams on the screen
+    growStyle: function() {
       return {
         flexGrow: (this.streamCanGrow) ? 1 : 0
       }
