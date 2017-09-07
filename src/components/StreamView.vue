@@ -7,7 +7,7 @@
     <div id="chat-section">
       <ul id="chat-nav">
         <li v-for="name in streamerNames" :key="name" @click.prevent="chatSelected(name)">
-          <a href="">{{name}}</a>
+          {{name}}
         </li>
       </ul>
 
@@ -40,7 +40,6 @@ export default {
       var chats = document.getElementsByClassName("chat");
       for (let i = 0; i < chats.length; i++) {
         let chat = chats[i];
-        chat.classList.remove("display")
 
         if (chat.outerHTML.includes(name))
           chat.classList.remove("hide")
@@ -76,6 +75,10 @@ export default {
 #chat-section {
   display: grid;
   grid-template-rows: 3vh 90vh 3vh;
+  grid-template-areas: 
+  "top" 
+  "middle"
+  "bottom";
   z-index: 1;
   padding: 10px;
 }
@@ -97,11 +100,19 @@ export default {
   padding: 0 5px;
 }
 
+#chat-nav {
+  grid-area: top;
+}
+
+#options-nav {
+  grid-area: bottom;
+}
 .chat {
   align-self: stretch;
   width: 100%;
   min-width: 300px;
   margin: 5px 0;
+  grid-area: middle;
 }
 
 .hide {
