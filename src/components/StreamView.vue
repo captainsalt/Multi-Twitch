@@ -92,9 +92,12 @@ export default {
 #options-nav li {
   background: #6441a4;
   border: 1px solid #6441a4;
+  align-self: center;
   color: white;
   margin: 1px;
-  padding: 0 5px;
+  padding: 2px 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
 }
 
 #chat-nav {
