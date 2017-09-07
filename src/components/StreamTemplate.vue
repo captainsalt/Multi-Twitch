@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .stream {
     border: 1px groove purple;    
 }
