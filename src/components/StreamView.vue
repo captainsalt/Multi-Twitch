@@ -10,7 +10,7 @@
           <a href="">{{name}}</a>
         </li>
       </ul>
-      <!-- <iframe scrolling="yes" class="chat" src="http://www.twitch.tv/hebo/chat"></iframe> -->
+      
       <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
 
       <ul id="options-nav">
