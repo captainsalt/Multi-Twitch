@@ -19,3 +19,8 @@ export default {
 }
 </script>
 
+<style>
+.stream {
+    border: 1px groove purple;    
+}
+</style>
