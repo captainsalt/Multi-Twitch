@@ -91,13 +91,18 @@ export default {
 #chat-nav li,
 #options-nav li {
   background: #6441a4;
-  border: 1px solid #6441a4;
+  border: 1px groove #6441a4;
   align-self: center;
   color: white;
   margin: 1px;
   padding: 2px 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 70%;
+}
+
+#chat-nav li:hover,
+#options-nav li:hover {
+  background: #211637;
 }
 
 #chat-nav {
@@ -114,9 +119,5 @@ export default {
   min-width: 300px;
   margin: 5px 0;
   grid-area: middle;
-}
-
-.hide {
-  display: none;
 }
 </style>
