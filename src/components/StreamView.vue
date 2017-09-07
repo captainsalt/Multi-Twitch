@@ -1,7 +1,7 @@
 <template>
   <div id="main">
-    <div id="stream-section">
-      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name"></stream-template>
+    <div id="stream-section" :style="flexStyle">
+      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="canGrow"></stream-template>
     </div>
 
     <div id="chat-section">
@@ -27,12 +27,10 @@ export default {
   data() {
     return {
       streamerNames: [
+        "gsmvoid",
         "captainsalt",
-        "vn4mock",
-        "mew2king",
-        "nairomk",
-        "zero",
-      ]
+      ],
+      streamCanGrow: false
     }
   },
   methods: {
@@ -46,6 +44,32 @@ export default {
         else
           chat.classList.add("hide")
       }
+    },
+  },
+  computed: {
+    flexStyle: function() {
+      var style = {
+        justifyContent: "center",
+        display: "flex"
+      }
+
+      if (this.streamerNames.length <= 2) {
+        style.flexFlow = "column";
+        style.flexWrap = "none";
+        this.streamCanGrow = true;
+      }
+      else {
+        style.flexFlow = "initial"
+        style.flexWrap = "wrap"
+        this.streamCanGrow = false;
+      }
+
+      return style;
+    },
+    canGrow: function() {
+      return {
+        flexGrow: (this.streamCanGrow) ? 1 : 0
+      }
     }
   }
 }
@@ -56,13 +80,6 @@ export default {
   display: grid;
   grid-template-columns: 65vw auto;
   height: 100vh;
-}
-
-#stream-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: row-reverse;
 }
 
 #stream-section iframe {
@@ -85,7 +102,7 @@ export default {
   display: inline-flex;
   flex-wrap: wrap;
   overflow: auto;
-  background: black;
+  background: #101010;
 }
 
 #chat-nav li,
