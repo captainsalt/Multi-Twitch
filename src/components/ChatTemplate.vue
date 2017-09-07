@@ -1,5 +1,5 @@
 <template>
-    <iframe :src="embedLink"></iframe>
+    <iframe class="chat hide" :src="embedLink"></iframe>
 </template>
 
 <script>

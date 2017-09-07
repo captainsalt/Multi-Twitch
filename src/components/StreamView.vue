@@ -10,7 +10,7 @@
           <a href="">{{name}}</a>
         </li>
       </ul>
-      
+
       <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
 
       <ul id="options-nav">
@@ -37,7 +37,16 @@ export default {
   },
   methods: {
     chatSelected(name) {
-      console.log(name);
+      var chats = document.getElementsByClassName("chat");
+      for (let i = 0; i < chats.length; i++) {
+        let chat = chats[i];
+        chat.classList.remove("display")
+
+        if (chat.outerHTML.includes(name))
+          chat.classList.remove("hide")
+        else
+          chat.classList.add("hide")
+      }
     }
   }
 }
@@ -93,5 +102,9 @@ export default {
   width: 100%;
   min-width: 300px;
   margin: 5px 0;
+}
+
+.hide {
+  display: none; 
 }
 </style>
