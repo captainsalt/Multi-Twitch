@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div id="stream-section">
-      <!-- <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name"></stream-template> -->
+      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name"></stream-template>
     </div>
 
     <div id="chat-section">
@@ -75,10 +75,7 @@ export default {
 #chat-section {
   display: grid;
   grid-template-rows: 3vh 90vh 3vh;
-  grid-template-areas: 
-  "top" 
-  "middle"
-  "bottom";
+  grid-template-areas: "top" "middle" "bottom";
   z-index: 1;
   padding: 10px;
 }
@@ -86,6 +83,7 @@ export default {
 #chat-nav,
 #options-nav {
   display: inline-flex;
+  flex-wrap: wrap;
   overflow: auto;
   background: black;
 }
@@ -94,9 +92,8 @@ export default {
 #options-nav li {
   background: #6441a4;
   border: 1px solid #6441a4;
-  border-radius: 5px;
   color: white;
-  margin: 0 1px;
+  margin: 1px;
   padding: 0 5px;
 }
 
@@ -107,6 +104,7 @@ export default {
 #options-nav {
   grid-area: bottom;
 }
+
 .chat {
   align-self: stretch;
   width: 100%;
@@ -116,6 +114,6 @@ export default {
 }
 
 .hide {
-  display: none; 
+  display: none;
 }
 </style>
