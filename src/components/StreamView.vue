@@ -70,7 +70,7 @@ export default {
     //allows the flexbox to grow so it fills up empty space when there's not may streams on the screen
     growStyle: function() {
       return {
-        flexGrow: (this.streamCanGrow) ? 1 : 0;
+        flexGrow: (this.streamCanGrow) ? 1 : 0
       }
     },
     streamerNames: function() {
