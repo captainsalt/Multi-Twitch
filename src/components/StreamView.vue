@@ -26,11 +26,7 @@ export default {
   name: 'main',
   data() {
     return {
-      streamerNames: [
-        "gsmvoid",
-        "captainsalt",
-        "captainsalt",
-      ],
+      streamerNames: getStreamers(),
       streamCanGrow: false
     }
   },
@@ -76,6 +72,20 @@ export default {
       return {
         flexGrow: (this.streamCanGrow) ? 1 : 0
       }
+    },
+    streamerNames: function() {
+      var pattern = /(?:https?:\/\/.+?\/)([^\s]+)/gi;
+      var url = window.location.href.split(pattern);
+
+      //remove empty entries
+      for (let i = 0; i < url.length; i++) {
+        let element = url[i];
+        if (!element)
+          url.splice(i, 1);
+      }
+
+      var streamers = url[0].split("/");
+      return streamers;
     }
   }
 }
