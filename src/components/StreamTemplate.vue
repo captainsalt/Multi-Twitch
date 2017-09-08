@@ -13,9 +13,14 @@ export default {
     },
     computed: {
         embedLink: function() {
-            return `http://player.twitch.tv/?channel=${this.streamerName}&muted=true&autoplay=false`
+            return `http://player.twitch.tv/?channel=${this.streamerName}&muted=false&autoplay=false`
         }
     }
 }
 </script>
 
+<style scoped>
+.stream {
+    border: 1px solid #6441a4;    
+}
+</style>
