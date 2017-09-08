@@ -38,9 +38,9 @@ export default {
         let chat = chats[i];
 
         if (chat.outerHTML.includes(name))
-          chat.classList.remove("hide")
+          chat.classList.remove("hide");
         else
-          chat.classList.add("hide")
+          chat.classList.add("hide");
       }
     },
   },
@@ -60,8 +60,8 @@ export default {
       }
       //more than 2 streams
       else {
-        style.flexFlow = "initial"
-        style.flexWrap = "wrap"
+        style.flexFlow = "initial";
+        style.flexWrap = "wrap";
         this.streamCanGrow = false;
       }
 
@@ -70,7 +70,7 @@ export default {
     //allows the flexbox to grow so it fills up empty space when there's not may streams on the screen
     growStyle: function() {
       return {
-        flexGrow: (this.streamCanGrow) ? 1 : 0
+        flexGrow: (this.streamCanGrow) ? 1 : 0;
       }
     },
     streamerNames: function() {
@@ -80,7 +80,7 @@ export default {
       //if the user didn't add any streamers to the url
       if (window.location.origin === window.location.href.replace(/\/$/, "")) {
         console.log("Insert some links");
-        return
+        return;
       }
 
       //remove empty entries
