@@ -101,15 +101,14 @@ export default {
 #stream-section iframe {
   min-height: 300px;
   min-width: 45%;
-  margin: 1px;
+  margin: 5px;
 }
 
 #chat-section {
   display: grid;
-  grid-template-rows: 8vh 90vh;
+  grid-template-rows: 8vh 92vh;
   grid-template-areas: "top" "bottom";
   z-index: 1;
-  padding: 5px;
 }
 
 #chat-nav {
@@ -148,5 +147,18 @@ export default {
   min-width: 300px;
   margin: 5px 0;
   grid-area: bottom;
+}
+
+@media only screen and (max-width: 850px) {
+  #chat-section {
+    display: none;
+  }
+  #stream-section iframe {
+    margin: 0px;
+    border: none;
+  }
+  #main {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
