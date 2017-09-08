@@ -121,6 +121,7 @@ export default {
   padding: 2px 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 70%;
+  cursor: pointer;
 }
 
 #chat-nav li:hover,
