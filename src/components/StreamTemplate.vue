@@ -21,6 +21,6 @@ export default {
 
 <style scoped>
 .stream {
-    border: 1px groove purple;    
+    border: 1px groove #6441a4;    
 }
 </style>
