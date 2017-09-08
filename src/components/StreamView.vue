@@ -122,6 +122,7 @@ export default {
   flex-wrap: wrap;
   overflow: auto;
   background: #101010;
+  grid-area: top;
 }
 
 #chat-nav li {
@@ -140,11 +141,11 @@ export default {
 }
 
 #chat-nav li:hover {
-  background: #211637;
+  background: #432c6d;
 }
 
-#chat-nav {
-  grid-area: top;
+#chat-nav li:active {
+  background: #2c1d49;
 }
 
 .chat {
