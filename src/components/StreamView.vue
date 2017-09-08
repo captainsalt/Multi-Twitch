@@ -11,7 +11,7 @@
         </li>
       </ul>
 
-      <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name" @ready:></chat-template>
+      <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
     </div>
   </div>
 </template>
