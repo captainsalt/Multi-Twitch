@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div id="stream-section" :style="flexStyle">
-      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="growStyle"></stream-template>
+      <!-- <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="growStyle"></stream-template> -->
     </div>
 
     <div id="chat-section">
@@ -12,11 +12,6 @@
       </ul>
 
       <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
-
-      <ul id="options-nav">
-        <li>Add Stream</li>
-        <li>Remove stream</li>
-      </ul>
     </div>
   </div>
 </template>
@@ -26,7 +21,6 @@ export default {
   name: 'main',
   data() {
     return {
-      streamerNames: getStreamers(),
       streamCanGrow: false
     }
   },
@@ -99,7 +93,6 @@ export default {
 }
 
 #stream-section iframe {
-  /* make scroll with page */
   min-height: 300px;
   min-width: 45%;
   margin: 1px;
@@ -107,24 +100,23 @@ export default {
 
 #chat-section {
   display: grid;
-  grid-template-rows: 3vh 90vh 3vh;
-  grid-template-areas: "top" "middle" "bottom";
+  grid-template-rows: 8vh 90vh;
+  grid-template-areas: "top" "bottom";
   z-index: 1;
-  padding: 10px;
+  padding: 5px;
 }
 
-#chat-nav,
-#options-nav {
+#chat-nav {
   display: inline-flex;
   flex-wrap: wrap;
   overflow: auto;
   background: #101010;
 }
 
-#chat-nav li,
-#options-nav li {
+#chat-nav li {
   background: #6441a4;
   border: 1px groove #6441a4;
+  text-align: center;
   align-self: center;
   color: white;
   margin: 1px;
@@ -132,10 +124,11 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 70%;
   cursor: pointer;
+  padding: 6px;
+  min-width: 60px;
 }
 
-#chat-nav li:hover,
-#options-nav li:hover {
+#chat-nav li:hover {
   background: #211637;
 }
 
@@ -143,15 +136,11 @@ export default {
   grid-area: top;
 }
 
-#options-nav {
-  grid-area: bottom;
-}
-
 .chat {
   align-self: stretch;
   width: 100%;
   min-width: 300px;
   margin: 5px 0;
-  grid-area: middle;
+  grid-area: bottom;
 }
 </style>
