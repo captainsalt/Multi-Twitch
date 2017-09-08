@@ -13,7 +13,7 @@ export default {
     },
     computed: {
         embedLink: function() {
-            return `http://player.twitch.tv/?channel=${this.streamerName}&muted=false&autoplay=false`
+            return `https://player.twitch.tv/?channel=${this.streamerName}&muted=false&autoplay=false`
         }
     }
 }

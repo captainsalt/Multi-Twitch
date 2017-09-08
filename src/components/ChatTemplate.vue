@@ -13,7 +13,7 @@ export default {
     },
     computed: {
         embedLink: function() {
-            return `http://www.twitch.tv/${this.streamerName}/chat`
+            return `https://www.twitch.tv/${this.streamerName}/chat`
         }
     }
 }
