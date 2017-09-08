@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div id="stream-section" :style="flexStyle">
-      <!-- <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="growStyle"></stream-template> -->
+      <stream-template v-for="name in streamerNames" :key="name" :streamer-name="name" :style="growStyle"></stream-template>
     </div>
 
     <div id="chat-section">
@@ -70,6 +70,12 @@ export default {
     streamerNames: function() {
       var pattern = /(?:https?:\/\/.+?\/)([^\s]+)/gi;
       var url = window.location.href.split(pattern);
+
+      //if the user didn't add any streamers to the url
+      if (window.location.origin === window.location.href.replace(/\/$/, "")) {
+        console.log("Insert some links");
+        return
+      }
 
       //remove empty entries
       for (let i = 0; i < url.length; i++) {
