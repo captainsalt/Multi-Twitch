@@ -157,7 +157,7 @@ export default {
   grid-area: bottom;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 905px) {
   #chat-section {
     display: none;
   }
