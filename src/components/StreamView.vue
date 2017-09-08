@@ -150,7 +150,8 @@ export default {
 
 .chat {
   align-self: stretch;
-  width: 100%;
+  justify-self: start;
+  width: 99%;
   min-width: 300px;
   margin: 5px 0;
   grid-area: bottom;
