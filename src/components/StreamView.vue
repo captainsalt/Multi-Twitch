@@ -11,7 +11,7 @@
         </li>
       </ul>
 
-      <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name"></chat-template>
+      <chat-template v-for="name in streamerNames" :key="name" :streamer-name="name" @ready:></chat-template>
     </div>
   </div>
 </template>
@@ -23,6 +23,12 @@ export default {
     return {
       streamCanGrow: false
     }
+  },
+  mounted() {
+    this.$nextTick(function() {
+      let chat = document.getElementsByClassName("chat")[0];
+      chat.classList.remove("hide");
+    });
   },
   methods: {
     //loops through chat elements and applies/removes the hidden class based on which button is pressed
@@ -87,7 +93,7 @@ export default {
       var streamers = url[0].split("/");
       return streamers;
     }
-  }
+  },
 }
 </script>
 
