@@ -6,11 +6,6 @@
 export default {
     name: "stream-template",
     props: ["streamerName"],
-    data() {
-        return {
-            streamerName
-        }
-    },
     computed: {
         embedLink: function() {
             return `https://player.twitch.tv/?channel=${this.streamerName}&muted=false&autoplay=false`;
