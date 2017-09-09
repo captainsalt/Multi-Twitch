@@ -6,11 +6,6 @@
 export default {
     name: "chat-template",
     props: ["streamerName"],
-    data() {
-        return {
-            streamerName
-        }
-    },
     computed: {
         embedLink: function() {
             return `https://www.twitch.tv/${this.streamerName}/chat`
