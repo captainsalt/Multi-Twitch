@@ -16,6 +16,7 @@ export default {
 
 <style scoped>
 .stream {
-    border: 1px solid #6441a4;    
+    border: 1px solid #6441a4;   
+    padding: 0 1px 0 0 ;
 }
 </style>
