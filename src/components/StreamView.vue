@@ -93,7 +93,7 @@ export default {
       var streamers = url[0].split("/");
       return streamers;
     }
-  },
+  }
 }
 </script>
 
@@ -166,7 +166,8 @@ export default {
     border: none;
   }
   #main {
-    grid-template-columns: 1fr;
+    display: block;
+    /* grid-template-columns: 1fr; */
   }
 }
 </style>
