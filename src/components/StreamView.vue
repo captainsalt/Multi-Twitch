@@ -33,7 +33,7 @@ export default {
   methods: {
     //loops through chat elements and applies/removes the hidden class based on which button is pressed
     chatSelected(name) {
-      var chats = document.getElementsByClassName("chat");
+      let chats = document.getElementsByClassName("chat");
       for (let i = 0; i < chats.length; i++) {
         let chat = chats[i];
 
@@ -47,7 +47,7 @@ export default {
   computed: {
     //Changes the stream layout based on how many streams are being watched 
     flexStyle: function() {
-      var style = {
+      let style = {
         justifyContent: "center",
         display: "flex"
       }
@@ -74,8 +74,8 @@ export default {
       }
     },
     streamerNames: function() {
-      var pattern = /(?:https?:\/\/.+?\/)([^\s]+)/gi;
-      var url = window.location.href.split(pattern);
+      let pattern = /(?:https?:\/\/.+?\/)([^\s]+)/gi;
+      let url = window.location.href.split(pattern);
 
       //if the user didn't add any streamers to the url
       if (window.location.origin === window.location.href.replace(/\/$/, "")) {
@@ -90,7 +90,7 @@ export default {
           url.splice(i, 1);
       }
 
-      var streamers = url[0].split("/");
+      let streamers = url[0].split("/");
       return streamers;
     }
   }
