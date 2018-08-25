@@ -1,5 +1,5 @@
 <template>
-    <iframe class="chat hide" :src="embedLink"></iframe>
+    <iframe class="chat hide" :src="embedLink" data-a-target="chat-theme-dark"></iframe>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
     props: ["streamerName"],
     computed: {
         embedLink: function() {
-            return `https://www.twitch.tv/${this.streamerName}/chat`
+            return `https://www.twitch.tv/embed/${this.streamerName}/chat`
         }
     }
 }
