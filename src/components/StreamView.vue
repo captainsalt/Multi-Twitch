@@ -6,7 +6,7 @@
 
     <div id="chat-section">
       <ul id="chat-nav">
-        <li v-for="name in streamerNames" :key="name" @click.prevent="chatSelected(name)">
+        <li class="chat-button" v-for="name in streamerNames" :key="name" @click.prevent="chatSelected(name)">
           {{name}}
         </li>
       </ul>
@@ -45,7 +45,7 @@ export default {
     },
   },
   computed: {
-    //Changes the stream layout based on how many streams are being watched 
+    //Changes the stream layout based on how many streams are being watched
     flexStyle: function() {
       let style = {
         justifyContent: "center",
@@ -125,7 +125,7 @@ export default {
   grid-area: top;
 }
 
-#chat-nav li {
+.chat-button {
   background: #6441a4;
   border: 1px groove #6441a4;
   text-align: center;
@@ -140,11 +140,11 @@ export default {
   min-width: 60px;
 }
 
-#chat-nav li:hover {
+.chat-button:hover {
   background: #432c6d;
 }
 
-#chat-nav li:active {
+.chat-button:active {
   background: #2c1d49;
 }
 
