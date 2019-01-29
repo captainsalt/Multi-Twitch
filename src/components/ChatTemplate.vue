@@ -8,7 +8,7 @@ export default {
     props: ["streamerName"],
     computed: {
         embedLink: function() {
-            return `https://www.twitch.tv/embed/${this.streamerName}/chat`
+            return `https://www.twitch.tv/embed/${this.streamerName}/chat?darkpopout`
         }
     }
 }
