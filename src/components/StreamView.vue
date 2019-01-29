@@ -27,7 +27,9 @@ export default {
   mounted() {
     this.$nextTick(function() {
       let chat = document.getElementsByClassName("chat")[0];
+      let button = document.getElementsByClassName("chat-button")[0];
       chat.classList.remove("hide");
+      button.classList.add("selected");
     });
   },
   methods: {
