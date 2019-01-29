@@ -34,14 +34,21 @@ export default {
     //loops through chat elements and applies/removes the hidden class based on which button is pressed
     chatSelected(name) {
       let chats = document.getElementsByClassName("chat");
-      for (let i = 0; i < chats.length; i++) {
-        let chat = chats[i];
+      let buttons = document.getElementsByClassName("chat-button");
 
+      Object.values(chats).forEach(chat => {
         if (chat.outerHTML.includes(name))
           chat.classList.remove("hide");
         else
           chat.classList.add("hide");
-      }
+      });
+
+      Object.values(buttons).forEach(button => {
+        if (button.innerHTML.includes(name))
+          button.classList.add("selected");
+        else
+          button.classList.remove("selected");
+      });
     },
   },
   computed: {
@@ -146,6 +153,11 @@ export default {
 
 .chat-button:active {
   background: #2c1d49;
+}
+
+.chat-button.selected {
+  background: #2c1d49;
+  border-color: #a16eff
 }
 
 .chat {
